@@ -13,9 +13,12 @@
         }
     
         public function enqueue_styles() {
-            if(is_checkout()){
-                wp_enqueue_style('custom', plugin_dir_url( __FILE__ ) . 'custom.css', array(),$this->version, 'all');
+            if(function_exists('is_checkout')){
+                if(is_checkout()){
+                    wp_enqueue_style('custom', plugin_dir_url( __FILE__ ) . 'custom.css', array(),$this->version, 'all');
+                }
             }
+           
         }
     
         public function enqueue_scripts() {
@@ -41,7 +44,7 @@
                 echo "
                 <button type='button' value='search_cui' name='search_cui' id='brunomag-termene-search-cui-btn'>
                 <div class='brmg-underline'>Completeaza datele firmei automat</div>
-                <div id='brunomag-termene-pow-by'>powerd by  <img src='".plugin_dir_url(__FILE__)."../assets/logo2.svg' width=100px height=100px></img></div>
+                <div id='brunomag-termene-pow-by'>powered by  <img src='".plugin_dir_url(__FILE__)."../assets/logo2.svg' width=100px height=100px></img></div>
                 </button> 
                 </div>";
                 echo "<small style='color:red;' id='termene-search-validation-message'></small>",

@@ -20,7 +20,14 @@ class Termene_Admin_Auth_Screen {
             array('Termene_Admin_Auth_Screen', 'termene_settings_display_password'),'termene_plugin','termene_plugin_login'
         );
     }
+    public function show_auth_window()
+    {
 
+        if ( ! termene_check_compatibility() ) {
+            termene_show_version_err();
+        }
+        $this->termene_show_login_form();
+    }
 
     public function termene_show_login_form(){
     ?>

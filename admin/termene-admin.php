@@ -19,7 +19,7 @@ class Termene_Admin {
     public function add_menu_pages(){
         $page_title = $menu_title = __('Termene', 'termene-woocommerce');
         $ter_auth_screen = $this->get_auth_screen();
-        $main_function_auth = array($ter_auth_screen, 'termene_show_login_form');
+        $main_function_auth = array($ter_auth_screen, 'show_auth_window');
         $menu_title_settings = __('Setari', 'termene-woocommerce');
         $position = 98;
         $icon_url=plugin_dir_url(__FILE__).'../assets/icon-16x16.png';
